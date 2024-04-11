@@ -13,7 +13,7 @@ export class UsersResolver {
     ];
   }
 
-  @Mutation(() => User)
+@Mutation(() => User)
   async createUser(@Arg("data") data: UserInput) {
     const user = {
         name:data.name,
