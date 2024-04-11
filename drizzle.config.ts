@@ -3,7 +3,7 @@ import * as dotenv from "dotenv";
 dotenv.config();
  
 export default {
-  schema: "./src/infra/dataBase/userTable.ts*",
+  schema: "./src/infra/dataBase/schemaUser.ts*",
   out: "./drizzle",
   driver: 'pg',
 //   dbCredentials: {
