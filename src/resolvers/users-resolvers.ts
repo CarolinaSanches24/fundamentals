@@ -1,24 +1,20 @@
-import { Query, Resolver, Arg, Mutation } from "type-graphql";
+import { Resolver, Query, Mutation, Arg } from "type-graphql";
 import { User } from "../dtos/models/users.model";
 import { UserInput } from "../dtos/inputs/userInput";
+import db from "../infra/drizzle";
+import { schemaUser } from "../infra/dataBase/schemaUser";
+
 
 @Resolver(() => User)
 export class UsersResolver {
   @Query(() => [User])
   async users() {
-    return [
-      {
-        name: "Carolina sanches",
-      },
-    ];
+    return db.select().from(schemaUser);
   }
 
-@Mutation(() => User)
+  @Mutation(() => User)
   async createUser(@Arg("data") data: UserInput) {
-    const user = {
-        name:data.name,
-        id:data.id
-    }
-    return user
+    const user = await db.insert(schemaUser).values({name:data.name}).returning();
+    return user;
   }
 }
