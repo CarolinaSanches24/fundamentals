@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsnd --respawn --transpile-only src/server.ts"
+    "dev": "tsnd --respawn --transpile-only src/server.ts",
+    "migration:generate": "drizzle-kit generate:pg --schema=./src/infra/dataBase/schemas/userSchema.ts",
+    "migration:push": "node -r esbuild-register src/infra/dataBase/migrate.ts"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +23,7 @@
     "class-validator": "^0.14.1",
     "dotenv": "^16.4.5",
     "drizzle-orm": "^0.30.8",
+    "esbuild-register": "^3.5.0",
     "graphql": "15.3.0",
     "mysql2": "^3.9.4",
     "pg": "^8.11.5",
