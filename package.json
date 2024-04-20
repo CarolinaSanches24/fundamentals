@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "tsnd --respawn --transpile-only src/server.ts",
     "migration:generate": "drizzle-kit generate:pg --schema=./src/infra/dataBase/schemas/userSchema.ts",
-    "migration:push": "node -r esbuild-register src/infra/dataBase/migrate.ts"
+    "migration:push": "node -r esbuild-register src/infra/dataBase/migrate.ts",
+    "migrate":"drizzle-kit generate:pg --schema=./src/infra/dataBase/schemas/userSchema.ts && node -r esbuild-register src/infra/dataBase/migrate.ts"
   },
   "keywords": [],
   "author": "",
