@@ -1,5 +1,5 @@
 {
-  "id": "80df9263-9f66-4d86-aea2-71af4f731576",
+  "id": "5957559a-b5f2-4f88-8064-ecf560e2bae0",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "5",
   "dialect": "pg",
@@ -37,6 +37,13 @@
           "type": "varchar(50)",
           "primaryKey": false,
           "notNull": true
+        },
+        "role": {
+          "name": "role",
+          "type": "roles",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "'client'"
         }
       },
       "indexes": {},

@@ -4,5 +4,6 @@ CREATE TABLE IF NOT EXISTS "users" (
 	"name" varchar(191) NOT NULL,
 	"email" varchar(191) NOT NULL,
 	"password" varchar(50) NOT NULL,
+	"role" "roles" DEFAULT 'client',
 	CONSTRAINT "users_email_unique" UNIQUE("email")
 );

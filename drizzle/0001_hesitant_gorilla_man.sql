@@ -1,2 +1,0 @@
-ALTER TABLE "users" ADD COLUMN "created_at" date DEFAULT CURRENT_TIMESTAMP NOT NULL;--> statement-breakpoint
-ALTER TABLE "users" ADD COLUMN "updated_at" date DEFAULT CURRENT_TIMESTAMP NOT NULL;

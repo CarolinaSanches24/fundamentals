@@ -1,6 +1,6 @@
 {
-  "id": "12ccebe4-baf0-41b4-85e6-9c2a93922fce",
-  "prevId": "80df9263-9f66-4d86-aea2-71af4f731576",
+  "id": "5ff33d1c-c1d3-44a3-a9b4-c2e9e4f56174",
+  "prevId": "5957559a-b5f2-4f88-8064-ecf560e2bae0",
   "version": "5",
   "dialect": "pg",
   "tables": {
@@ -20,20 +20,6 @@
           "primaryKey": false,
           "notNull": true
         },
-        "created_at": {
-          "name": "created_at",
-          "type": "date",
-          "primaryKey": false,
-          "notNull": true,
-          "default": "CURRENT_TIMESTAMP"
-        },
-        "updated_at": {
-          "name": "updated_at",
-          "type": "date",
-          "primaryKey": false,
-          "notNull": true,
-          "default": "CURRENT_TIMESTAMP"
-        },
         "name": {
           "name": "name",
           "type": "varchar(191)",
@@ -51,6 +37,27 @@
           "type": "varchar(50)",
           "primaryKey": false,
           "notNull": true
+        },
+        "role": {
+          "name": "role",
+          "type": "roles",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "'client'"
+        },
+        "createdAt": {
+          "name": "createdAt",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "now()"
+        },
+        "updatedAt": {
+          "name": "updatedAt",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "now()"
         }
       },
       "indexes": {},
