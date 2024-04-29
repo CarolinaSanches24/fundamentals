@@ -6,12 +6,12 @@ export class User {
   id: String;
   @Field()
   name: String;
-  @Field()
-  email: String;
-  @Field()
-  password: String;
-  @Field()
-  createdAt: Date;
-  @Field()
-  updatedAt: Date;
+  // @Field()
+  // email?: String;
+  // @Field()
+  // password?: String;
+  // @Field()
+  // createdAt?: Date;
+  // @Field()
+  // updatedAt?: Date;
 }

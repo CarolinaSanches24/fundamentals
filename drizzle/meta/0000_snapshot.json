@@ -1,5 +1,5 @@
 {
-  "id": "5957559a-b5f2-4f88-8064-ecf560e2bae0",
+  "id": "146381ba-0d74-4d58-b786-d34a664cf2a3",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "5",
   "dialect": "pg",
@@ -19,6 +19,20 @@
           "type": "varchar(191)",
           "primaryKey": false,
           "notNull": true
+        },
+        "createdAt": {
+          "name": "createdAt",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "now()"
+        },
+        "updatedAt": {
+          "name": "updatedAt",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "now()"
         },
         "name": {
           "name": "name",
