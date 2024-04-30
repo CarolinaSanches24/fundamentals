@@ -1,5 +1,5 @@
 import { Resolver, Query, Mutation, Arg } from "type-graphql";
-import { User } from "../dtos/models/users.model";
+import { User, UserResponseDTO } from "../dtos/models/users.model";
 import { db } from "../infra/dataBase/connect";
 import { schemaUser } from "../infra/dataBase/schemas/userSchema";
 import { UserInput } from "../dtos/inputs/userInput";
@@ -8,29 +8,22 @@ import { eq } from "drizzle-orm";
 @Resolver(() => User)
 export class UsersResolver {
   @Query(() => [User])
-  async getUsers(): Promise<User[] | []> {
+  async getUsers(): Promise<UserResponseDTO[] | []> {
     const result = await db.select().from(schemaUser);
     if(result.length==0)return [];
     return result;
   }
 
-  @Mutation(() => User)
-  async createUser(@Arg("data") data: UserInput): Promise<User> {
-    const { name, email, password } = data;
+  @Mutation(() => User, { nullable: true })
+  async createUser(@Arg("data") data: UserInput): Promise<void> {
+    const { name, email, password} = data;
       const existingUser = await db.select().from(schemaUser).where(eq(schemaUser.email,email));
 
       if (existingUser && existingUser.length > 0) {
         throw new Error("Email já cadastrado. Por favor, escolha outro email.");
       }
-    const newUser = await db.insert(schemaUser)
-    .values({ name, email, password }).returning();
-  
-    const result :User = {
-      name:newUser[0].name,
-      email:newUser[0].email,
-      password:newUser[0].password
-    }
-    return result;
+      await db.insert(schemaUser)
+      .values({ name, email, password });
   }
   @Mutation (()=>User, { nullable: true })
   async updatedUser(@Arg("data") data:UserInput, @Arg("userId") userId:number):Promise<void>{

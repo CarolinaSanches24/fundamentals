@@ -1,6 +1,6 @@
 {
-  "id": "5a7ae77c-9aef-456e-a760-6cf409871809",
-  "prevId": "d51b4afd-aabe-42ff-bc16-5a2c272a6e48",
+  "id": "22628abf-d241-45e7-99e6-aba27ba2fefc",
+  "prevId": "a8ef4538-3ec9-4967-82bc-3a5c047759f7",
   "version": "5",
   "dialect": "pg",
   "tables": {
@@ -13,6 +13,20 @@
           "type": "serial",
           "primaryKey": true,
           "notNull": true
+        },
+        "createdAt": {
+          "name": "createdAt",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "now()"
+        },
+        "updatedAt": {
+          "name": "updatedAt",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "now()"
         },
         "name": {
           "name": "name",
@@ -31,6 +45,13 @@
           "type": "varchar(50)",
           "primaryKey": false,
           "notNull": true
+        },
+        "role": {
+          "name": "role",
+          "type": "roles",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "'client'"
         }
       },
       "indexes": {},
@@ -47,7 +68,16 @@
       }
     }
   },
-  "enums": {},
+  "enums": {
+    "roles": {
+      "name": "roles",
+      "values": {
+        "admin": "admin",
+        "client": "client",
+        "employee": "employee"
+      }
+    }
+  },
   "schemas": {},
   "_meta": {
     "columns": {},

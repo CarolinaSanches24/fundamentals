@@ -1,5 +1,5 @@
 {
-  "id": "d51b4afd-aabe-42ff-bc16-5a2c272a6e48",
+  "id": "a8ef4538-3ec9-4967-82bc-3a5c047759f7",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "5",
   "dialect": "pg",
@@ -13,26 +13,6 @@
           "type": "serial",
           "primaryKey": true,
           "notNull": true
-        },
-        "pid": {
-          "name": "pid",
-          "type": "varchar(191)",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "createdAt": {
-          "name": "createdAt",
-          "type": "timestamp",
-          "primaryKey": false,
-          "notNull": false,
-          "default": "now()"
-        },
-        "updatedAt": {
-          "name": "updatedAt",
-          "type": "timestamp",
-          "primaryKey": false,
-          "notNull": false,
-          "default": "now()"
         },
         "name": {
           "name": "name",
@@ -49,12 +29,6 @@
         "password": {
           "name": "password",
           "type": "varchar(50)",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "role": {
-          "name": "role",
-          "type": "role",
           "primaryKey": false,
           "notNull": true
         }
