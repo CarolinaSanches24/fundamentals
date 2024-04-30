@@ -17,6 +17,9 @@ dependencies:
   dotenv:
     specifier: ^16.4.5
     version: 16.4.5
+  drizzle-graphql:
+    specifier: ^0.3.5
+    version: 0.3.5(drizzle-orm@0.30.8)(graphql@15.3.0)
   drizzle-orm:
     specifier: ^0.30.8
     version: 0.30.8(@types/pg@8.11.5)(mysql2@3.9.4)(pg@8.11.5)
@@ -1495,6 +1498,19 @@ packages:
       wordwrap: 1.0.0
     dev: true
 
+  /drizzle-graphql@0.3.5(drizzle-orm@0.30.8)(graphql@15.3.0):
+    resolution: {integrity: sha512-aPwb7KQmtgjWfVgflAHw0zh5gU/cC8IlwoNFbD1zkllm4mT3imQLAU6iVQd64W5YjLQQpFDsSMgB8YKrSX3i0w==}
+    peerDependencies:
+      drizzle-orm: '>=0.30.9'
+      graphql: '>=16.3.0'
+    dependencies:
+      drizzle-orm: 0.30.8(@types/pg@8.11.5)(mysql2@3.9.4)(pg@8.11.5)
+      graphql: 15.3.0
+      graphql-parse-resolve-info: 4.13.0(graphql@15.3.0)
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
   /drizzle-kit@0.20.14:
     resolution: {integrity: sha512-0fHv3YIEaUcSVPSGyaaBfOi9bmpajjhbJNdPsRMIUvYdLVxBu9eGjH8mRc3Qk7HVmEidFc/lhG1YyJhoXrn5yA==}
     hasBin: true
@@ -1925,6 +1941,19 @@ packages:
     resolution: {integrity: sha512-d65bNlIadxvpb/A2abVdlqKqV563juRnZ1Wtk6s1sIR8uNsXR70xqIzVqxVf1eTqDunwT2MkczEeaezCKTZhwA==}
     dependencies:
       get-intrinsic: 1.2.4
+    dev: false
+
+  /graphql-parse-resolve-info@4.13.0(graphql@15.3.0):
+    resolution: {integrity: sha512-VVJ1DdHYcR7hwOGQKNH+QTzuNgsLA8l/y436HtP9YHoX6nmwXRWq3xWthU3autMysXdm0fQUbhTZCx0W9ICozw==}
+    engines: {node: '>=8.6'}
+    peerDependencies:
+      graphql: '>=0.9 <0.14 || ^14.0.2 || ^15.4.0 || ^16.3.0'
+    dependencies:
+      debug: 4.3.4
+      graphql: 15.3.0
+      tslib: 2.6.2
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /graphql-query-complexity@0.7.2(graphql@15.3.0):

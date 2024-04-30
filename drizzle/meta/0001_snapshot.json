@@ -1,6 +1,6 @@
 {
-  "id": "6c31d001-87ba-482b-a774-77432d5c115b",
-  "prevId": "146381ba-0d74-4d58-b786-d34a664cf2a3",
+  "id": "5a7ae77c-9aef-456e-a760-6cf409871809",
+  "prevId": "d51b4afd-aabe-42ff-bc16-5a2c272a6e48",
   "version": "5",
   "dialect": "pg",
   "tables": {
@@ -13,26 +13,6 @@
           "type": "serial",
           "primaryKey": true,
           "notNull": true
-        },
-        "pid": {
-          "name": "pid",
-          "type": "varchar(191)",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "createdAt": {
-          "name": "createdAt",
-          "type": "timestamp",
-          "primaryKey": false,
-          "notNull": false,
-          "default": "now()"
-        },
-        "updatedAt": {
-          "name": "updatedAt",
-          "type": "timestamp",
-          "primaryKey": false,
-          "notNull": false,
-          "default": "now()"
         },
         "name": {
           "name": "name",

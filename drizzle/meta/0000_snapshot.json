@@ -1,5 +1,5 @@
 {
-  "id": "146381ba-0d74-4d58-b786-d34a664cf2a3",
+  "id": "d51b4afd-aabe-42ff-bc16-5a2c272a6e48",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "5",
   "dialect": "pg",
@@ -54,10 +54,9 @@
         },
         "role": {
           "name": "role",
-          "type": "roles",
+          "type": "role",
           "primaryKey": false,
-          "notNull": false,
-          "default": "'client'"
+          "notNull": true
         }
       },
       "indexes": {},
